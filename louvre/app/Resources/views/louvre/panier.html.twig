@@ -1,0 +1,19 @@
+{% extends '::basePanier.html.twig' %}
+{% block panier %}
+    <div>
+        {{ include(':louvre:form.html.twig') }}
+    </div>
+    <br>
+    <select class="selectpicker">
+        <option>Journée</option>
+        <option>Demi-journée</option>
+    </select>
+
+    <dl class="dl-horizontal pull-right">
+        <dt>Total:</dt>
+        <dd>24,00€</dd>
+    </dl>
+
+    <div class="clearfix"></div>
+    <a href="livraison.php" class="btn btn-success pull-right">Valider mon panier</a>
+{% endblock %}

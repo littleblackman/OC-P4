@@ -1,0 +1,45 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: stefa
+ * Date: 28/10/2017
+ * Time: 07:28
+ */
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="commande_billet_utilisateur")
+ */
+class CommandeBilletUtilisateur
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Commandes")
+     *
+     */
+    private $commande;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Billets")
+     */
+    private $billet;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Utilisateurs")
+     */
+    private $utilisateur;
+
+
+}
