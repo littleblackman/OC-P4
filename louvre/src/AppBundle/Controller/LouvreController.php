@@ -56,6 +56,7 @@ class LouvreController extends Controller
             if ($form->isValid())
             {
                 $em = $this->getDoctrine()->getManager();
+                $em->persist($commande->getBillets());
                 $em->persist($commande);
                 $em->flush();
 
